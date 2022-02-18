@@ -22,7 +22,7 @@ subprojects {
     dependencies {
         implementation(files("D:\\NotionPowered\\projects\\notion-common\\build\\libs\\notion-common.jar"))
 
-        implementation("org.jetbrains:annotations:20.1.0")
+        implementation("org.jetbrains:annotations:23.0.0")
         implementation("com.google.code.gson:gson:2.9.0")
         implementation("com.google.guava:guava:30.0-jre")
         implementation("com.google.inject:guice:4.2.2")
