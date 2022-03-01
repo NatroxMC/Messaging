@@ -24,7 +24,7 @@ subprojects {
 
         implementation("org.jetbrains:annotations:23.0.0")
         implementation("com.google.code.gson:gson:2.9.0")
-        implementation("com.google.guava:guava:31.0.1-jre")
+        implementation("com.google.guava:guava:31.1-jre")
         implementation("com.google.inject:guice:4.2.2")
     }
 
