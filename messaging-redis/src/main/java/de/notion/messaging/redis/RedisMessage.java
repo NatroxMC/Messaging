@@ -6,14 +6,14 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Arrays;
 import java.util.UUID;
 
-public class SimpleRedisMessage implements Message {
+public class RedisMessage implements Message {
 
     private final UUID sender;
     private final String senderIdentifier;
     private final String[] parameters;
     private final Object[] dataToSend;
 
-    SimpleRedisMessage(@NotNull UUID sender, @NotNull String senderIdentifier, @NotNull String[] parameters, @NotNull Object[] dataToSend) {
+    RedisMessage(@NotNull UUID sender, @NotNull String senderIdentifier, @NotNull String[] parameters, @NotNull Object[] dataToSend) {
         this.sender = sender;
         this.senderIdentifier = senderIdentifier;
         this.parameters = parameters;

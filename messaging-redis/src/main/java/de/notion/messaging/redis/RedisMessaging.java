@@ -4,7 +4,6 @@ import com.google.common.eventbus.EventBus;
 import de.notion.messaging.MessagingService;
 import de.notion.messaging.event.MessageEvent;
 import de.notion.messaging.message.Message;
-import org.jetbrains.annotations.NotNull;
 import org.redisson.Redisson;
 import org.redisson.api.RTopic;
 import org.redisson.api.RedissonClient;
@@ -39,7 +38,7 @@ public class RedisMessaging implements MessagingService<RedisMessageBuilder> {
         globalMessagingChannel = redissonClient.getTopic("GlobalMessagingChannel", new SerializationCodec());
 
         this.messageListener = (channel, msg) -> {
-            if (!(msg instanceof SimpleRedisMessage))
+            if (!(msg instanceof RedisMessage))
                 return;
             // Own Messages won't throw an event
             if (isOwnMessage(msg))

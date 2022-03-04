@@ -12,6 +12,6 @@ public class RedisMessageBuilder extends MessageBuilder {
 
     @Override
     public Message build() {
-        return new SimpleRedisMessage(sender, senderIdentifier, parameters, dataToSend);
+        return new RedisMessage(sender, senderIdentifier, parameters, dataToSend);
     }
 }
