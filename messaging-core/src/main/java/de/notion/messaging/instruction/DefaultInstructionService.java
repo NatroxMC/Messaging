@@ -13,7 +13,6 @@ import de.notion.messaging.message.MessageBuilder;
 import de.notion.messaging.message.MessageWrapper;
 import org.jetbrains.annotations.NotNull;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.Arrays;
 import java.util.Map;
 import java.util.UUID;
@@ -37,7 +36,7 @@ public class DefaultInstructionService implements InstructionService {
         this.injectorProvider.create(registry);
         messagingService.getEventBus().register(this);
 
-        scheduler.asyncSchedule(() -> {
+        scheduler.delay(() -> {
             for (UUID uuid : pendingInstructions.keySet()) {
                 MessagingInstruction<?> instruction = pendingInstructions.get(uuid);
                 if ((System.currentTimeMillis() - instruction.getCreationTimeStamp()) >= TimeUnit.SECONDS.toMillis(60))
