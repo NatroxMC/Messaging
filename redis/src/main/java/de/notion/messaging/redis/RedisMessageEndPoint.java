@@ -34,7 +34,7 @@ public class RedisMessageEndPoint implements MessageEndPoint {
 
     @Override
     public MessageChannel channel(String name) {
-        String channelName = "MessagingChannel_" + name;
+        var channelName = "MessagingChannel_" + name;
         if (!cache.containsKey(channelName))
             cache.put(channelName, new RedisMessageChannel(channelName, this));
         return cache.get(channelName);
