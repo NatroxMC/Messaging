@@ -1,4 +1,4 @@
 dependencies {
     implementation(project(":messaging-core"))
-    implementation("org.redisson:redisson-all:3.16.8")
+    implementation("org.redisson:redisson-all:3.17.2")
 }
