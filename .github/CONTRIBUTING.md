@@ -1,4 +1,4 @@
-## How to contribute to the Common project
+## How to contribute to the Messaging project
 
 #### Did you find a bug?
 * Open a new GitHub issue if it's not already reported.
@@ -13,7 +13,7 @@
 * Ensure the PR description clearly describes the feature.
 
 #### **Do you have questions about the source code?**
-* Ask any question about how to use the Common in the GitHub issues section.
+* Ask any question about how to use the Messaging in the GitHub issues section.
 
 ## General Contribution Rules
-* By contributing to the Common project your code/contribution will be licensed under the [Apache Version 2.0](../LICENSE) license.
+* By contributing to Messaging project your code/contribution will be licensed under the [Apache Version 2.0](../LICENSE) license.
