@@ -20,38 +20,37 @@ plugins {
     id("com.github.johnrengelman.shadow") version "7.1.2"
 }
 
-group = "de.notion"
-version = "1.0-SNAPSHOT"
+defaultTasks("build", "shadowJar")
 
 allprojects {
+    group = "de.natrox"
+    version = "2.0.0-SNAPSHOT"
+    description = "A simple pub/sub messaging service for Java"
+
     repositories {
         mavenCentral()
     }
 }
 
 subprojects {
-
     apply(plugin = "java")
     apply(plugin = "maven-publish")
     apply(plugin = "com.github.johnrengelman.shadow")
 
     dependencies {
-        implementation(files("D:\\NotionPowered\\projects\\notion-common\\build\\libs\\notion-common.jar"))
+        //TEMP
+        compileOnly(files("D:\\workspace\\NatroxMC\\Common\\build\\libs\\common.jar"))
+        compileOnly(files("D:\\workspace\\NatroxMC\\EventBus\\build\\libs\\eventbus.jar"))
 
-        implementation("org.jetbrains:annotations:23.0.0")
-        implementation("com.google.code.gson:gson:2.9.0")
-        implementation("com.google.guava:guava:31.0.1-jre")
-        implementation("com.google.inject:guice:4.2.2")
+        compileOnly("org.jetbrains:annotations:23.0.0")
+        compileOnly("com.esotericsoftware.kryo:kryo5:5.3.0")
     }
 
-    tasks {
-        compileJava {
-            options.encoding = "UTF-8"
-        }
-
-        shadowJar {
-            //Set the Name of the Output File
-            archiveFileName.set("${project.name}.jar")
-        }
+    tasks.withType<JavaCompile> {
+        sourceCompatibility = JavaVersion.VERSION_17.toString()
+        targetCompatibility = JavaVersion.VERSION_17.toString()
+        // options
+        options.encoding = "UTF-8"
+        options.isIncremental = true
     }
 }
