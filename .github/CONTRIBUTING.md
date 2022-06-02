@@ -16,4 +16,4 @@
 * Ask any question about how to use the Messaging in the GitHub issues section.
 
 ## General Contribution Rules
-* By contributing to Messaging project your code/contribution will be licensed under the [Apache Version 2.0](../LICENSE) license.
+* By contributing to the Messaging project your code/contribution will be licensed under the [Apache Version 2.0](../LICENSE) license.
